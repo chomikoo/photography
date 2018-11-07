@@ -12,9 +12,9 @@
 function chomikoo_custom_menu() {
 	register_nav_menus(
 	array(
-	'top-menu' => __( 'Top menu' ),
-	'footer-menu' => __( 'Footer menu' )
-	)
+		'top-menu' => __( 'Menu' ),
+		'social-menu' => __( 'Social menu' )
+		)
 	);
 }
 add_action( 'init', 'chomikoo_custom_menu' );

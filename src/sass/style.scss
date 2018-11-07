@@ -1,4 +1,10 @@
-
+ 
+ /*--------------------------------------------------------------
+# Vendors
+--------------------------------------------------------------*/
+@import "vendors/slick";
+@import "vendors/slick-theme";
+ 
  /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -12,15 +18,28 @@
 /*--------------------------------------------------------------
 # Mixins
 --------------------------------------------------------------*/
-@import "helpers/mixins";    
+@import "helpers/mixins";     
 
 
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
 @import "layout/breakpoints"; 
-@import "layout/grid";
-@import "layout/index";  
+@import "layout/grid"; 
+@import "layout/general";  
+
+/*--------------------------------------------------------------
+# Partials
+--------------------------------------------------------------*/
+@import "partials/header";  
+@import "partials/navbar";  
+@import "partials/instagram";  
+@import "partials/album-card";  
+@import "partials/box";  
+@import "partials/footer";  
+
+
+
 @import "layout/animations";  
 
  

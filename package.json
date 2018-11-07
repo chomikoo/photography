@@ -30,8 +30,15 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-svgo": "^1.5.4",
     "gulp-util": "^3.0.8",
     "gulp-wait": "0.0.2",
-    "run-sequence": "^2.2.1"
+    "imagesloaded": "^4.1.4",
+    "run-sequence": "^2.2.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "dependencies": {
+    "instafeed.js": "^1.4.1"
   }
 }

@@ -7,6 +7,11 @@
  * 
  */
 
+// Hide AdminBar for Admin
+if ( ! current_user_can( 'manage_options' ) ) {
+    show_admin_bar( false );
+}
+
 // remove ver string ,from js and css
 function chomikoo_remove_wp_version_strings( $src ) {
 

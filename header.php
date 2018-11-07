@@ -9,15 +9,19 @@
 
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
+<html <?php language_attributes(); ?>>
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><?php bloginfo('name'); ?><?php wp_title(' | ', 'echo', 'right'); ?></title>
+        <?php wp_head(); ?>
+    </head>
 
-<?php wp_head(); ?>
-</head>
+    <body <?php body_class(); ?>>
 
-<body <?php body_class(); ?>>
+        <header class="header container">
 
-Header
+            <h1 class="page-title">Natalia<span class="red-text">Zięba</span></h1>
+            <?php get_template_part('template-parts/navbar'); ?>
+            
+        </header>

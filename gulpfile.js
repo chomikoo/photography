@@ -17,6 +17,7 @@ const gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	concat = require('gulp-concat'),
 	babili = require('gulp-babel-minify'),
+	stripdebug = require('gulp-strip-debug'),
 
 	// Utility plugins
 
@@ -28,6 +29,7 @@ const gulp = require('gulp'),
 	// Images/SVG
 
 	imagemin = require('gulp-imagemin'),
+	svgo = require('gulp-svgo'),
 
 	// Browser
 	browserSync = require('browser-sync').create(),
@@ -42,7 +44,7 @@ const projectName = 'photo'; // localhost/photo
 
 //=========== Styles ==================/
 
-const styleSRC = './src/sass/style.scss';
+const styleSRC = './src/sass/**/*.scss';
 const styleDIST = './dist/css/';
 const mapDIST = './';
 
@@ -152,22 +154,28 @@ gulp.task('scripts', () => {
 		.pipe(browserSync.stream())
 });
 
-gulp.task('copy', () => {
-	return gulp.src('src/**/*.html')
-		.pipe(gulp.dest('dist'))
-		.pipe(browserSync.stream())
-});
+// gulp.task('copy', () => {
+// 	return gulp.src('src/**/*.html')
+// 		.pipe(gulp.dest('dist'))
+// 		.pipe(browserSync.stream())
+// });
 
 
 //================
 //     Images 
 //================
+
 gulp.task('images', () => {
 	return gulp.src(imgSRC)
 		.pipe(imagemin())
 		.pipe(gulp.dest(imgDIST))
 });
 
+gulp.task('svg', () => {
+    return gulp.src('src/svg/*')
+        .pipe(svgo())
+        .pipe(gulp.dest('dist/svg'));
+});
 
 //================
 //      Fonts 

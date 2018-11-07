@@ -1,0 +1,79 @@
+// ========
+// HEADER
+// ========
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 15px;
+    margin: 0 auto 30px auto;
+}
+
+.carousel {
+    &__img {
+        width: 100%;
+    }
+    &__btn {
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        z-index: 2;
+        font-size: 40px;
+        height: 100%;
+        width: 50px;
+
+        &--prev {
+            left: 0;
+        }
+
+        &--next {
+            left: calc(100% - 50px);
+        }
+    }
+}
+
+.head {
+    margin-bottom: 20px;
+    overflow: hidden;
+    &__about {
+        position: relative;
+        margin: 0 0 0 -5px;
+        padding: 20px 50px 50px 50px;
+        background-color: $white;
+        color: $black;
+        &:before {
+            content: "";
+            width: calc(100% - 30px);
+            height: 30px;
+            position: absolute;
+            top: calc(0% - 30px);
+            left: 0px;
+            background: $white;
+          }
+          &:after {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: calc(0% - 30px);
+            left: calc(100% - 30px);
+            border: 15px solid $white;
+            border-right: 15px solid transparent;
+            border-top: 15px solid transparent;
+          }
+    }
+
+    &__title {
+        margin: 0 0 20px 0;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid $black;
+        font-size: 30px;
+        letter-spacing: 5px;
+        text-transform: lowercase;
+    }
+
+    &__text {
+        line-height: 30px;
+    }
+}

@@ -26,6 +26,11 @@ Photgraphy portfolio
 * WordPress
 * ACF
 
+##Libs
+* Instafeed.js
+* slick.js
+* ionicons
+
 
 ## Setup
 `npm i`

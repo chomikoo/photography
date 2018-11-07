@@ -15,3 +15,8 @@
 		define('THEME_URL', WP_CONTENT_URL.'/themes/'.get_template().'/');
 	}
 
+
+
+	// SUPPORTS
+
+	add_theme_support( 'post-thumbnails' ); 

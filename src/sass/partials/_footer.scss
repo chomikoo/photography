@@ -1,0 +1,15 @@
+.footer {
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+        .icon {
+            margin-right: $gutter;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
