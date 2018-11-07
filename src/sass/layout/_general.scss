@@ -26,11 +26,6 @@ ul {
 a {
     color: $white;
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-        color: $black;
-    }
 }
 
 img {
@@ -62,6 +57,7 @@ img {
 
 .page-title {
     font-weight: 100;
+ 
 }
 
 .info {

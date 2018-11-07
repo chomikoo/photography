@@ -39,7 +39,9 @@
 			'<div class="box__content"><h2 class="box__title">#insta</h2><p class="box__caption">{{capion}}</p></div>'
 	});
 
-	instaFeed.run();
+	if( $('#instagram').length ) {
+		instaFeed.run();
+	}
 
 
 
