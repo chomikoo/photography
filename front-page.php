@@ -21,6 +21,7 @@ get_header(); ?>
 				if( $slider ) {
 					echo '<ul class="carousel__list">';
 					foreach( $slider as $image) {
+						// echo ;
 					?>
 						<li>
 						
@@ -87,7 +88,7 @@ get_header(); ?>
 				
 				<article id="instagram" class="box instagram">
 					
-					<span class="icon icon--insta"></span>
+					<!-- <span class="fab fa-instagram"></span> -->
 
 				</article>
 	
