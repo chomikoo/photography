@@ -76,3 +76,12 @@
 		}
 		return apply_filters('the_excerpt', $text);
 	}
+
+
+	/*-------------------------------------
+	Move the Yoast SEO Meta Box to the Bottom of the edit screen in WordPress
+	---------------------------------------*/
+	function yoasttobottom() {
+		return 'low';
+	}
+	add_filter( 'wpseo_metabox_prio', 'yoasttobottom');

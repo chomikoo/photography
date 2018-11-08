@@ -184,7 +184,7 @@ gulp.task('svg', () => {
 gulp.task('fonts', () => {
 	return gulp.src( fontSRC )
 	  .pipe(gulp.dest( fontDIST ))
-  })
+  });
   
 
 gulp.task('watch', ['browserSync', 'styles'], () => {

@@ -26,15 +26,14 @@ get_header(); ?>
 				$query = new WP_Query($args);
 				
 				if ( $query->have_posts() ) {
-					
+					$i = 0;
 					while( $query->have_posts() ) {
 						$query->the_post(); ?>
 
-						<article class="album-card album-<?php the_ID(); ?>">
+						<article class="album-card album-<?php the_ID(); ?> <?php echo ($i%3) ? 'grid--v1' : 'grid--v2' ?>">
 								
 								<a href="<?php the_permalink(); ?>" class="album-card__link">
-										<div class="album-card__img" style="background-image:url(<?php the_post_thumbnail_url(); ?>)"></div>
-										<!-- <?php the_post_thumbnail('large', array('class' => 'album-card__thumb')); ?> -->
+									<?php the_post_thumbnail('large', array('class' => 'album-card__img')); ?>
 									<div class="album-card__container">
 										<h2 class="album-card__title"><?php the_title(); ?></h2>
 										<span class="album-card__date"><?php the_field('data_sesji'); ?>,<?php the_field('miejsce'); ?></span>
@@ -44,7 +43,7 @@ get_header(); ?>
 						</article>
 						
 						<?php
-
+						$i++;
 }		
 
 wp_reset_postdata();

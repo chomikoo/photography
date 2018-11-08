@@ -15,7 +15,7 @@
 get_header(); ?>
 
 	<main class="container">
-		ABOUT
+		<?php get_template_part('template-parts/box'); ?>
 	</main>
 
 <?php get_footer();

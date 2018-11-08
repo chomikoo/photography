@@ -30,13 +30,20 @@
 
 /*--------------------------------------------------------------
 # Partials
---------------------------------------------------------------*/
+--------------------------------------------------------------*/ 
 @import "partials/header";  
 @import "partials/navbar";  
 @import "partials/instagram";  
 @import "partials/album-card";  
-@import "partials/box";  
-@import "partials/footer";  
+@import "partials/box"; 
+@import "partials/gallery";  
+@import "partials/footer";   
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/ 
+@import "pages/single";  
+
 
 
 
