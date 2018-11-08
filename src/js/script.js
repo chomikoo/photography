@@ -43,7 +43,7 @@
 		instaFeed.run();
 	}
 
-
+	
 
 
 })(jQuery)
