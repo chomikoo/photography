@@ -43,6 +43,24 @@
 		instaFeed.run();
 	}
 
+	const addFloating = e => {
+		const contactInput = $(e.target).closest('.contact__input');
+		contactInput.addClass('contact__input--focus');
+	}
+	
+	const removeFloating = e => {
+		const inputVal = e.target.value;
+		// console.log(input);
+		if(inputVal == '' ) {
+			const contactInput = $(e.target).closest('.contact__input');
+			contactInput.removeClass('contact__input--focus');
+		}
+	}
+ 
+	if( $('.contact__input').length > 0 ) {
+		$('input, textarea').on('focus', addFloating);
+		$('input, textarea').on('blur', removeFloating);
+	}
 
 
 
