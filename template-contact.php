@@ -22,14 +22,14 @@ get_header(); ?>
 				<?php echo do_shortcode('[contact-form-7 id="81" title="Formularz 1"]') ?>
 			</div>
 
-			<article class="box">
-				<img class="box__img" src="<?php the_field('kontakt_zdjecie'); ?>">
-				<div class="box__content">
+			<article class="contact__box box">
+				<img class="box__img" src="<?php the_field('zdjecie'); ?>">
+				<div class="box__content wysiwyg">
 					<h2 class="box__title"><?php echo __('Kontakt'); ?></h2>
-					<?php the_field('contact'); ?>
+					<?php the_field('tekst'); ?>
 				</div>
 			</article>
-			
+
 		</section>
 
 

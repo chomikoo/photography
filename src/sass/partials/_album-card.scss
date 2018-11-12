@@ -14,14 +14,22 @@
         height: 100%;
         object-fit: cover;
 
-        // background-position: center;
-        // background-size: cover;
+        &--left,
+        &--right {
+            width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    &__compare {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
     }
     
 
     &__title,
     &__date {
-        // color: $black;
         background-color: $white;
         padding: 0 5px;
         transform: perspective(200px) rotateX(-90deg);
