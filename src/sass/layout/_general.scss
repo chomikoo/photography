@@ -82,19 +82,19 @@ img {
     @include breakpoint(sm) {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: minmax(420px, auto);
+        
+            &--v1 {
+                grid-column: span 1;
+            }
+        
+            &--v2 {
+                grid-column: span 2;
+            }
     }
 
     @include breakpoint(xl) {
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: minmax(450px, auto);
-    }
-
-    &--v1 {
-        grid-column: span 1;
-    }
-
-    &--v2 {
-        grid-column: span 2;
     }
 
 }
@@ -151,5 +151,16 @@ img {
         &::after {
             background-image: url('./../svg/pin.svg');
         }
+    }
+}
+
+
+// LazyLoad
+
+.lazy {
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    &.loaded { 
+        opacity: 1;
     }
 }

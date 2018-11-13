@@ -34,7 +34,7 @@ get_header(); ?>
                 ?>
                 <li class="gallery__element">
                     <figure class="gallery__figure">
-                        <img class="gallery__img" <?php awesome_acf_responsive_image( $image[ID], 'thumb-640', '1200px' ); ?> alt="<?php echo $image['alt']; ?>" />
+                        <img class="gallery__img lazy" <?php awesome_acf_responsive_image_lazyload( $image[ID], 'thumb-640', '1200px' ); ?> alt="<?php echo $image['alt']; ?>" />
                         <?php 
                             $figcaption = $image['caption'];
                             if( $figcaption ) {

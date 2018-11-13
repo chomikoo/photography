@@ -38,8 +38,8 @@ get_header(); ?>
 										$afterID = get_field('po');
 									?>
 									<div class="album-card__compare">
-										<img class="album-card__img album-card__img--left" <?php awesome_acf_responsive_image( $beforeID, 'thumb-640', '1200px' ); ?> alt="<?php echo $image['alt']; ?>" />
-										<img class="album-card__img album-card__img--right" <?php awesome_acf_responsive_image( $afterID, 'thumb-640', '1200px' ); ?> alt="<?php echo $image['alt']; ?>" />
+										<img class="album-card__img album-card__img--left lazy" <?php awesome_acf_responsive_image_lazyload( $beforeID, 'thumb-640', '1200px' ); ?> alt="<?php echo $image['alt']; ?>" />
+										<img class="album-card__img album-card__img--right lazy" <?php awesome_acf_responsive_image_lazyload( $afterID, 'thumb-640', '1200px' ); ?> alt="<?php echo $image['alt']; ?>" />
 									</div>
 
 									<div class="album-card__container">

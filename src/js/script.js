@@ -5,7 +5,7 @@
 
 	// Preloader 
 	$('html').addClass('js');
-	$(window).on('load', function() {
+	$(window).on('load', function () {
 		// console.log('preloader');
 		$("#preloader").fadeOut();
 	});
@@ -29,8 +29,15 @@
 		// setting-name: setting-value
 	});
 
-	// Instafeeed
+	// LazyLoad init
+	const myLazyLoad = new LazyLoad({
+		elements_selector: ".lazy",
+		threshold: 50,
+		callback_enter: (el)=>{console.log('view', el)}
+	});
 
+
+	// Instafeeed
 	// Init instafeed.js
 	var instaFeed = new Instafeed({
 		get: 'user',
@@ -46,7 +53,7 @@
 			'<div class="box__content"><h2 class="box__title">#insta</h2><p class="box__caption">{{capion}}</p></div>'
 	});
 
-	if( $('#instagram').length ) {
+	if ($('#instagram').length) {
 		instaFeed.run();
 	}
 
@@ -58,17 +65,17 @@
 		const contactInput = $(e.target).closest('.contact__input');
 		contactInput.addClass('contact__input--focus');
 	}
-	
+
 	const removeFloating = e => {
 		const inputVal = e.target.value;
 		// console.log(input);
-		if(inputVal == '' ) {
+		if (inputVal == '') {
 			const contactInput = $(e.target).closest('.contact__input');
 			contactInput.removeClass('contact__input--focus');
 		}
 	}
- 
-	if( $('.contact__input').length > 0 ) {
+
+	if ($('.contact__input').length > 0) {
 		$('input, textarea').on('focus', addFloating);
 		$('input, textarea').on('blur', removeFloating);
 	}
@@ -76,7 +83,7 @@
 
 	// Compare photos before & after retouch
 
-	if( $('.compare').length ) {
+	if ($('.compare').length) {
 		$('.compare__container').twentytwenty();
 	}
 
