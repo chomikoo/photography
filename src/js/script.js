@@ -3,6 +3,13 @@
 
 	console.log('Hello from script.js ');
 
+	// Preloader 
+	$('html').addClass('js');
+	$(window).on('load', function() {
+		// console.log('preloader');
+		$("#preloader").fadeOut();
+	});
+
 	$('.hamburger').on('click', function () {
 		$(this).toggleClass('active');
 		$('#main-menu').toggleClass('open');

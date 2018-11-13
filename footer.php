@@ -14,6 +14,8 @@
 
 ?>
 
+	<?php get_template_part('template-parts/preloader'); ?>
+
 	<footer class="footer container">
 		
 		<div class="footer__social">
