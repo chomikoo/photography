@@ -1,6 +1,8 @@
 (function ($) {
 	'use strict'
 
+	const headerH = $('.header').outerHeight();
+
 	console.log('Hello from script.js ');
 
 	// Preloader 
@@ -25,15 +27,24 @@
 		cssEase: 'ease-in',
 		nextArrow: '<button class="carousel__btn carousel__btn--prev btn">&lsaquo;</button>',
 		prevArrow: '<button class="carousel__btn carousel__btn--next btn">&rsaquo;</button>'
+	});
 
-		// setting-name: setting-value
+
+	// Scroll Animations 
+
+	$(window).on('scroll', function() {
+		if($(window).scrollTop() > headerH ) {
+			$('.hide-text').addClass('active');
+		} else {
+			$('.hide-text').removeClass('active');
+		}
 	});
 
 	// LazyLoad init
 	const myLazyLoad = new LazyLoad({
 		elements_selector: ".lazy",
 		threshold: 50,
-		callback_enter: (el)=>{console.log('view', el)}
+		// callback_enter: (el)=>{console.log('view', el)}
 	});
 
 

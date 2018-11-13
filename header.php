@@ -21,7 +21,7 @@
 
         <header class="header container">
 
-            <h1 class="page-title"><a href="<?php echo get_home_url(); ?>">Natalia<span class="red-text">Zięba</span></a></h1>
+            <h1 class="page-title"><a href="<?php echo get_home_url(); ?>">N<span class="hide-text">atalia</span><span class="red-text">Z<span class="hide-text">ięba</span></span></a></h1>
             <?php get_template_part('template-parts/navbar'); ?>
             
         </header>
