@@ -18,6 +18,9 @@ function chomikoo_load_scripts() {
 	
 	wp_enqueue_script( 'fontawesome',  'https://use.fontawesome.com/releases/v5.5.0/js/all.js', array(), 'all' );
 	wp_enqueue_script( 'slider', THEME_URL . 'src/js/vendors/slick.js', array('jquery'), $ver, 'all'  );
+
+	wp_enqueue_script( 'lazy', THEME_URL . 'src/js/vendors/lazyload.iife.js', array('jquery'), $ver, 'all'  );
+
 	wp_enqueue_script( 'twenty-event', THEME_URL . 'src/js/vendors/jquery.event.move.js', array('jquery'), $ver, 'all'  );
 	wp_enqueue_script( 'twenty', THEME_URL . 'src/js/vendors/jquery.twentytwenty.js', array('jquery'), $ver, 'all'  );
 

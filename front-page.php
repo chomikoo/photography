@@ -62,8 +62,8 @@ get_header(); ?>
 						<article class="album-card album-<?php the_ID(); ?>">
 				
 								<a href="<?php the_permalink(); ?>" class="album-card__link">
-									<!-- <div class="album-card__img" style="background-image:url(<?php the_post_thumbnail_url(); ?>)"></div> -->
-									<?php the_post_thumbnail('large', array('class' => 'album-card__img')); ?>
+									
+									<img class="lazy album-card__img" <?php lazy_load_thumbnail(get_the_ID(),'thumb-640', '1200px') ?>  />
 									<div class="album-card__container">
 										<h2 class="album-card__title"><?php the_title(); ?></h2>
 										<span class="album-card__date"><?php the_field('data_sesji'); ?>,<?php the_field('miejsce'); ?></span>
@@ -93,9 +93,12 @@ get_header(); ?>
 				</article>
 	
 				<article class="box">
-			
-					<img class="box__img" src="<?php the_field('kontakt_zdjecie'); ?>">
-					<div class="box__content">
+					<?php 
+						$contact_img = get_field('kontakt_zdjecie');
+					?>
+
+					<img class="box__img lazy" data-src="<?php echo $contact_img['url']; ?>" alt="<?php echo $contact_img['alt']; ?>">
+					<div class="box__content wysiwyg">
 						<h2 class="box__title"><?php echo __('Kontakt'); ?></h2>
 						<?php the_field('contact'); ?>
 					</div>

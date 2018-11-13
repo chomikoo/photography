@@ -43,3 +43,20 @@ function awesome_acf_responsive_image($image_id,$image_size,$max_width){
             echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
       }
 }
+
+
+function awesome_acf_responsive_image_lazyload($image_id,$image_size,$max_width){
+
+      if($image_id != '') {
+
+            $image_src = wp_get_attachment_image_url( $image_id, $image_size );
+
+            $image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
+
+            $alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+
+            echo 'data-src="'.$img_src.'" data-srcset="'.$image_srcset.'" data-sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'" alt="'.$alt.'"' ;      
+      }
+}
+
+
