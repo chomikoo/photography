@@ -8,7 +8,6 @@
 	// Preloader 
 	$('html').addClass('js');
 	$(window).on('load', function () {
-		// console.log('preloader');
 		$("#preloader").fadeOut();
 	});
 
@@ -44,7 +43,6 @@
 	const myLazyLoad = new LazyLoad({
 		elements_selector: ".lazy",
 		threshold: 50,
-		// callback_enter: (el)=>{console.log('view', el)}
 	});
 
 
@@ -97,6 +95,22 @@
 	if ($('.compare').length) {
 		$('.compare__container').twentytwenty();
 	}
+
+
+	// Ajax - Post loading into modal
+	
+	const openAjaxModal = function(e) {
+		e.preventDefault();
+		const post_link = this.href + " #main" ;
+		console.log(post_link);
+
+		$.ajaxSetup({cache: false});
+		$('#ajax-container').load(post_link);
+
+
+	}
+
+	$('.modal-link').on('click', openAjaxModal);
 
 
 

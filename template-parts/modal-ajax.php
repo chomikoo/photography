@@ -1,0 +1,1 @@
+<div id="ajax-container" class="modal-ajax"></div>

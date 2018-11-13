@@ -44,9 +44,9 @@
             'hierarchical'              => false,
             'menu_icon'                 => 'dashicons-format-image',
             'menu_position'             => 5,
-            // 'show_in_rest'              => true,
-            // 'rest_base'                 => 'gallery-api',
-            // 'rest_controller_class'     => 'WP_REST_Posts_Controller',
+            'show_in_rest'              => true,
+            'rest_base'                 => 'gallery-api',
+            'rest_controller_class'     => 'WP_REST_Posts_Controller',
             'rewrite'                   => array('slug' => 'galeria'),
             'supports' => array(
                 'title','editor','author','thumbnail','excerpt','comments','custom-fields'
@@ -88,9 +88,9 @@
             'hierarchical'              => false,
             'menu_icon'                 => 'dashicons-format-image',
             'menu_position'             => 6,
-            // 'show_in_rest'              => true,
-            // 'rest_base'                 => 'recipes-api',
-            // 'rest_controller_class'     => 'WP_REST_Posts_Controller',
+            'show_in_rest'              => true,
+            'rest_base'                 => 'recipes-api',
+            'rest_controller_class'     => 'WP_REST_Posts_Controller',
             'rewrite'                   => array('slug' => 'retusze'),
             'supports' => array(
                 'title','editor','author','thumbnail','excerpt','comments','custom-fields'

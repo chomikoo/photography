@@ -48,32 +48,23 @@ get_header(); ?>
 			<!-- Recenty added  -->
 			<?php
 				$args = array(
-					'post_type' => 'albums',
+					'post_type' => array('albums', 'retusz'),
 					'orderby' => 'date',
-					'posts_per_page' => 4
+					'posts_per_page' => 6
 				);
 				$query = new WP_Query($args);
 
 				if ( $query->have_posts() ) {
 
 					while( $query->have_posts() ) {
-						$query->the_post(); ?>
-
-						<article class="album-card album-<?php the_ID(); ?>">
-				
-								<a href="<?php the_permalink(); ?>" class="album-card__link">
-									
-									<img class="lazy album-card__img" <?php lazy_load_thumbnail(get_the_ID(),'thumb-640', '1200px') ?>  />
-									<div class="album-card__container">
-										<h2 class="album-card__title"><?php the_title(); ?></h2>
-										<span class="album-card__date"><?php the_field('data_sesji'); ?>,<?php the_field('miejsce'); ?></span>
-									</div>
-								</a>
-							
-						</article>
-
-						<?php
-
+						$query->the_post(); 
+						
+						if( 'albums' == get_post_type() ) {
+							get_template_part('template-parts/gallery-card');
+						} else if ( 'retusz' == get_post_type() ) {
+							get_template_part('template-parts/retouch-card');							
+						}
+					
 					}		
 
 					wp_reset_postdata();
