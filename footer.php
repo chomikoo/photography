@@ -13,6 +13,7 @@
  */
 
 ?>
+	<?php get_template_part('template-parts/modal-ajax'); ?>
 
 	<?php get_template_part('template-parts/preloader'); ?>
 

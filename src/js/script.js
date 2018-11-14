@@ -3,12 +3,19 @@
 
 	const headerH = $('.header').outerHeight();
 
+	// Document events
+
+	$(document).on('keyup', e => {
+		if ( e.key === 'Escape' ) {
+			closeModal();
+		}
+	})
+
 	console.log('Hello from script.js ');
 
 	// Preloader 
 	$('html').addClass('js');
 	$(window).on('load', function () {
-		// console.log('preloader');
 		$("#preloader").fadeOut();
 	});
 
@@ -44,7 +51,6 @@
 	const myLazyLoad = new LazyLoad({
 		elements_selector: ".lazy",
 		threshold: 50,
-		// callback_enter: (el)=>{console.log('view', el)}
 	});
 
 
@@ -77,7 +83,7 @@
 		contactInput.addClass('contact__input--focus');
 	}
 
-	const removeFloating = e => {
+	const removeFloating = e => { 
 		const inputVal = e.target.value;
 		// console.log(input);
 		if (inputVal == '') {
@@ -97,6 +103,45 @@
 	if ($('.compare').length) {
 		$('.compare__container').twentytwenty();
 	}
+
+	// Open Modal
+
+	const openModal = () => {
+		// console.log('Open');
+		$('.modal--ajax').addClass('open');
+
+		if( $('.modal--ajax .compare__container').length ) {
+			$('.modal--ajax .compare__container').twentytwenty();
+		}
+	}
+
+	const closeModal = () => {
+		// console.log('Close');
+		$('body').removeClass('no-scroll');
+		$('.main').removeClass('blur');
+		$('.modal--ajax').removeClass('open');
+		$('#ajax-container').html('');
+	}
+
+	$('.modal--ajax .btn--close').on('click', closeModal);
+
+	// Ajax - Post loading into modal
+	
+	$.ajaxSetup({cache: false});
+	const loadPostAjax = function(e) {
+		e.preventDefault();
+		const $this = $(this);
+		const modalContainer = $('#ajax-container');
+		const post_link = $this.attr('href');
+
+		modalContainer.load(post_link + ' #main', openModal);
+		$('.main').addClass('blur');
+		$('body').addClass('no-scroll');
+
+		return false;
+	}
+
+	$('.modal-link').on('click', loadPostAjax);
 
 
 

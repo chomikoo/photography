@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<main class="container">
+	<main id="main" class="main container">
 		<section class="grid">
 
 			<?php
@@ -32,7 +32,7 @@ get_header(); ?>
 
 						<article class="album-card album-<?php the_ID(); ?> <?php echo ($i%3) ? 'grid--v1' : 'grid--v2' ?>">
 								
-								<a href="<?php the_permalink(); ?>" class="album-card__link">
+								<a href="<?php the_permalink(); ?>" class="album-card__link modal-link">
 									<?php
 										$beforeID = get_field('przed');
 										$afterID = get_field('po');
