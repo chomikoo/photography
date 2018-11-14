@@ -45,7 +45,7 @@
             'menu_icon'                 => 'dashicons-format-image',
             'menu_position'             => 5,
             'show_in_rest'              => true,
-            'rest_base'                 => 'gallery-api',
+            'rest_base'                 => 'albums',
             'rest_controller_class'     => 'WP_REST_Posts_Controller',
             'rewrite'                   => array('slug' => 'galeria'),
             'supports' => array(
@@ -89,7 +89,7 @@
             'menu_icon'                 => 'dashicons-format-image',
             'menu_position'             => 6,
             'show_in_rest'              => true,
-            'rest_base'                 => 'recipes-api',
+            'rest_base'                 => 'retusz',
             'rest_controller_class'     => 'WP_REST_Posts_Controller',
             'rewrite'                   => array('slug' => 'retusze'),
             'supports' => array(

@@ -3,6 +3,14 @@
 
 	const headerH = $('.header').outerHeight();
 
+	// Document events
+
+	$(document).on('keyup', e => {
+		if ( e.key === 'Escape' ) {
+			closeModal();
+		}
+	})
+
 	console.log('Hello from script.js ');
 
 	// Preloader 
@@ -96,21 +104,44 @@
 		$('.compare__container').twentytwenty();
 	}
 
+	// Open Modal
+
+	const openModal = () => {
+		// console.log('Open');
+		$('.modal--ajax').addClass('open');
+
+		if( $('.modal--ajax .compare__container').length ) {
+			$('.modal--ajax .compare__container').twentytwenty();
+		}
+	}
+
+	const closeModal = () => {
+		// console.log('Close');
+		$('body').removeClass('no-scroll');
+		$('.main').removeClass('blur');
+		$('.modal--ajax').removeClass('open');
+		$('#ajax-container').html('');
+	}
+
+	$('.modal--ajax .btn--close').on('click', closeModal);
 
 	// Ajax - Post loading into modal
 	
-	const openAjaxModal = function(e) {
+	$.ajaxSetup({cache: false});
+	const loadPostAjax = function(e) {
 		e.preventDefault();
-		const post_link = this.href + " #main" ;
-		console.log(post_link);
+		const $this = $(this);
+		const modalContainer = $('#ajax-container');
+		const post_link = $this.attr('href');
 
-		$.ajaxSetup({cache: false});
-		$('#ajax-container').load(post_link);
+		modalContainer.load(post_link + ' #main', openModal);
+		$('.main').addClass('blur');
+		$('body').addClass('no-scroll');
 
-
+		return false;
 	}
 
-	$('.modal-link').on('click', openAjaxModal);
+	$('.modal-link').on('click', loadPostAjax);
 
 
 

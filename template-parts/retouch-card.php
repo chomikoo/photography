@@ -1,6 +1,6 @@
 <article class="album-card album-<?php the_ID(); ?>">
 								
-    <a href="<?php the_permalink(); ?>" class="album-card__link">
+    <a href="<?php the_permalink(); ?>" class="album-card__link modal-link" data-id="<?php the_ID(); ?>" data-type="<?php echo get_post_type(); ?>">
         <?php
             $beforeID = get_field('przed');
             $afterID = get_field('po');

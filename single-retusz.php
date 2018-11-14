@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-<main class="container">
+<main id="main" class="container">
 
     <?php
 
