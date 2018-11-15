@@ -19,7 +19,7 @@ get_header(); ?>
 	<main class="container">
 		<section class="about">
 			   
-			<img class="about__img" src="<?php awesome_acf_responsive_image( $imageID, 'thumb-640', '640px' ); ?>">
+			<img class="about__img" <?php awesome_acf_responsive_image( $imageID, 'thumb-640', '640px' ); ?>>
 			<div class="about__content ">
 				<h2 class="about__title"><?php echo __('o mnie'); ?></h2> 
 				<div class="wysiwyg"><?php the_field('o_mnie'); ?></div>

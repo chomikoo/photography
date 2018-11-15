@@ -57,10 +57,48 @@
 	}
 
 
-	/*-------------------------------------
+	/*-----------------------------------------------------------------------
 	Move the Yoast SEO Meta Box to the Bottom of the edit screen in WordPress
-	---------------------------------------*/
+	------------------------------------------------------------------------*/
 	function yoasttobottom() {
 		return 'low';
 	}
 	add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
+	/*-----------------------------------------------------------------------
+	// Require a featured image before publish posts
+	------------------------------------------------------------------------*/
+
+	add_action('save_post', 'chomikoo_check_thumbnail');
+	add_action('admin_notices', 'chomikoo_thumbnail_error');
+
+	function chomikoo_check_thumbnail( $post_id ) {
+		// change to any custom post type 
+		if( get_post_type($post_id) != 'post' )
+			return;
+
+		if ( ! has_post_thumbnail( $post_id ) ) {
+			// set a transient to show the users an admin message
+			set_transient( "has_post_thumbnail", "no" );
+			// unhook this function so it doesn't loop infinitely
+			remove_action('save_post', 'chomikoo_check_thumbnail');
+			// update the post set it to draft
+			wp_update_post(array('ID' => $post_id, 'post_status' => 'draft'));
+
+			add_action('save_post', 'chomikoo_check_thumbnail');
+		
+		} else {
+
+			delete_transient( "has_post_thumbnail" );
+			
+		}
+
+	}
+
+	function chomikoo_thumbnail_error() {
+		// check if the transient is set, and display the error message
+		if ( get_transient( "has_post_thumbnail" ) == "no" ) {
+			echo "<div id='message' class='error'><p><strong>". __('Musisz ustawić obraz dla postu przed publikacja. Twoj post został zapisany', 'photoportfolio'); ."</strong></p></div>";
+			delete_transient( "has_post_thumbnail" );
+		}
+	}
