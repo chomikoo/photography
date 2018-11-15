@@ -58,6 +58,13 @@
                 "operator": "==",
                 "value": "retusz"
             }
+        ],
+        [
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:retusz"
+            }
         ]
     ],
     "menu_order": 0,
@@ -83,5 +90,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542040573
+    "modified": 1542290356
 }

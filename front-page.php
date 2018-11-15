@@ -58,11 +58,11 @@ get_header(); ?>
 
 					while( $query->have_posts() ) {
 						$query->the_post(); 
-						
-						if( 'albums' == get_post_type() ) {
-							get_template_part('template-parts/gallery-card');
-						} else if ( 'retusz' == get_post_type() ) {
+
+						if( has_term('retusz', 'category') ) {
 							get_template_part('template-parts/retouch-card');							
+						} else  {
+							get_template_part('template-parts/gallery-card');
 						}
 					
 					}		

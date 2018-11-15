@@ -89,6 +89,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "albums"
+            },
+            {
+                "param": "post_category",
+                "operator": "!=",
+                "value": "category:retusz"
             }
         ]
     ],
@@ -111,5 +116,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1541508826
+    "modified": 1542290429
 }

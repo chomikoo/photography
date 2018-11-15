@@ -98,7 +98,7 @@
 	function chomikoo_thumbnail_error() {
 		// check if the transient is set, and display the error message
 		if ( get_transient( "has_post_thumbnail" ) == "no" ) {
-			echo "<div id='message' class='error'><p><strong>". __('Musisz ustawić obraz dla postu przed publikacja. Twoj post został zapisany', 'photoportfolio'); ."</strong></p></div>";
+			echo "<div id='message' class='error'><p><strong>Musisz ustawić obraz dla postu przed publikacja. Twoj post został zapisany</strong></p></div>";
 			delete_transient( "has_post_thumbnail" );
 		}
 	}
