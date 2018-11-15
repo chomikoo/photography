@@ -1,4 +1,4 @@
-<article class="album-card album-<?php the_ID(); ?>">
+<article class="album-card album-<?php the_ID(); ?> <?php if( is_page('Portfolio') ) { echo ($i%3) ? 'grid--v1' : 'grid--v2'; }?>">
 								
     <a href="<?php the_permalink(); ?>" class="album-card__link modal-link" data-id="<?php the_ID(); ?>" data-type="<?php echo get_post_type(); ?>">
         <?php

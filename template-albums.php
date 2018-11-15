@@ -28,27 +28,23 @@ get_header(); ?>
 				if ( $query->have_posts() ) {
 					$i = 0;
 					while( $query->have_posts() ) {
-						$query->the_post(); ?>
-
-						<article class="album-card album-<?php the_ID(); ?> <?php echo ($i%3) ? 'grid--v1' : 'grid--v2' ?>">
-								
-								<a href="<?php the_permalink(); ?>" class="album-card__link modal-link">
-
-									<img class="lazy album-card__img" <?php lazy_load_thumbnail(get_the_ID(),'thumb-640', '1200px') ?> />
-
-									<div class="album-card__container">
-										<h2 class="album-card__title"><?php the_title(); ?></h2>
-										<span class="album-card__date"><?php the_field('data_sesji'); ?>,<?php the_field('miejsce'); ?></span>
-									</div>
-								</a>
-							
-						</article>
+						$query->the_post(); 
 						
-						<?php
-						$i++;
-}		
+						if( has_term('retusz', 'category') ) {
+							// get_template_part('template-parts/card','retouch');	
+							include( locate_template('template-parts/card-retouch.php') );
+						} else  {
 
-wp_reset_postdata();
+							include( locate_template('template-parts/card-gallery.php') );
+							// get_template_part('template-parts/card','gallery');
+						}
+					
+						$i++;
+
+				}		
+
+				wp_reset_postdata();
+
 				} else { ?>
 
 					<p><?php __( 'Nie znaleziono ostatnio dodanych albumów.' ); ?></p>
@@ -58,6 +54,7 @@ wp_reset_postdata();
 				?>
 			
 			</section>
+
 		</main>
 
 <?php get_footer();

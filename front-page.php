@@ -60,9 +60,9 @@ get_header(); ?>
 						$query->the_post(); 
 
 						if( has_term('retusz', 'category') ) {
-							get_template_part('template-parts/retouch-card');							
+							get_template_part('template-parts/card','retouch');							
 						} else  {
-							get_template_part('template-parts/gallery-card');
+							get_template_part('template-parts/card','gallery');
 						}
 					
 					}		
