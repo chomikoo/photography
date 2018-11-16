@@ -15,43 +15,29 @@
 get_header(); ?>
 
 	<main class="main container">
-		<section class="grid">
 
-			<?php
-				$args = array(
-					'post_type' => 'albums',
-					'orderby' => 'date',
-					'posts_per_page' => -1
-				);
-				$query = new WP_Query($args);
+		<section class="albums">
+
+			<div class="box box--filter albums__side">
+					<div class="box__thumb">
+						<img class="box__img " <?php awesome_acf_responsive_image(get_field('zdjecie'),'thumb-640', '1200px') ?>  />
+					</div>
+							
+					<div class="box__content">
+
+						<h2 class="box__title"><?php echo __('Kategorie:', 'photoportfolio'); ?></h2>
+	
+						<div id="category-filter">
+							<?php echo get_category_filters(); ?> 
+						</div>
+	
+					</div>
+		
+			</div>
+
+			<div id="filter-results" class="albums__main grid">
 				
-				if ( $query->have_posts() ) {
-					$i = 0;
-					while( $query->have_posts() ) {
-						$query->the_post(); 
-						
-						if( has_term('retusz', 'category') ) {
-							// get_template_part('template-parts/card','retouch');	
-							include( locate_template('template-parts/card-retouch.php') );
-						} else  {
-
-							include( locate_template('template-parts/card-gallery.php') );
-							// get_template_part('template-parts/card','gallery');
-						}
-					
-						$i++;
-
-				}		
-
-				wp_reset_postdata();
-
-				} else { ?>
-
-					<p><?php __( 'Nie znaleziono ostatnio dodanych albumów.' ); ?></p>
-					
-					<?php
-				}
-				?>
+			</div>
 			
 			</section>
 

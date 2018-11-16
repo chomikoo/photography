@@ -26,6 +26,12 @@ function chomikoo_load_scripts() {
 
 
 	wp_enqueue_script( 'insta', THEME_URL . 'src/js/vendors/instafeed.js', array('jquery'), $ver, 'all'  );
+
+	// AJAX FILTER 
+	wp_register_script( 'genre-ajax-js', THEME_URL . '/src/js/genre.js', array( 'jquery' ), $ver, true );
+    wp_localize_script( 'genre-ajax-js', 'ajax_category_params', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+	wp_enqueue_script( 'genre-ajax-js' );
+
 	wp_enqueue_script( 'myscript', THEME_URL . 'src/js/script.js', array('jquery'), $ver, 'all'  );
 	
 	// PRODUCTION	

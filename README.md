@@ -29,21 +29,24 @@ Photgraphy portfolio
 ##Libs
 * Instafeed.js
 * slick.js
-* ionicons
+
 
 
 ## Setup
 `npm i`
 
+##WP Plugins
+* ACF
+* ACF to REST API
+* All-in-one WP Migration
+* Contact Form 7
+* Smush
+* Tuxedo Big File Uploads
+* Yoast SEO
 
-<!-- ## Features
-List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3 -->
-
-To-do list:
-* Whole page ;)
+##To-do list:
+- [] Filltering
+- [] Sharing
 
 
 ## Status

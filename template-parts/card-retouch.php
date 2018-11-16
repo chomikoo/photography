@@ -1,6 +1,6 @@
-<article class="album-card album-<?php the_ID(); ?> <?php if( is_page('Portfolio') ) { echo ($i%3) ? 'grid--v1' : 'grid--v2'; }?>">
+<article class="album-card album-<?php the_ID(); ?> <?php if( $grid ) { echo ($i%3) ? 'grid--v1' : 'grid--v2'; }?>">
 								
-    <a href="<?php the_permalink(); ?>" class="album-card__link modal-link" data-id="<?php the_ID(); ?>" data-type="<?php echo get_post_type(); ?>">
+    <a href="<?php the_permalink(); ?>" class="album-card__link modal-link">
         <?php
             $beforeID = get_field('przed');
             $afterID = get_field('po');
