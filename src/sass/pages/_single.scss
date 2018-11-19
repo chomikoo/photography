@@ -3,6 +3,9 @@
     margin: 0 auto 25px auto;
 }
 
-// .compare img{
-//     height: calc(100vh - 100px);
-// }
+.compare {
+    margin: 0 auto;
+    &__img {
+        height: calc(100vh - 100px);
+    }
+}

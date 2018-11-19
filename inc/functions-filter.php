@@ -6,14 +6,14 @@ function get_category_filters() {
     $filters_html = false;
  
     if( $terms ) {
-        $filters_html = '<ul>';
+        $filters_html = '<ul class="filter">';
  
         foreach( $terms as $term ) {
 
             $term_id = $term->term_id;
             $term_name = $term->name;
  
-            $filters_html .= '<li class="term_id_'.$term_id.'">'.$term_name.'<input type="checkbox" name="filter_category[]" value="'.$term_id.'"></li>';
+            $filters_html .= '<li class="filter__element"><input id="filter_'. $term_id .'" class="custom_checkbox" type="checkbox" name="filter_category[]" value="'.$term_id.'"><label for="filter_'.$term_id.'">'.$term_name.'</label></li>';
 
         }
         $filters_html .= '<li class="clear-all">Zobacz wszystkie</li>';

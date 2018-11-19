@@ -77,7 +77,6 @@ img {
     grid-template-columns: 1fr;
     grid-auto-rows: minmax(400px, auto);
 
-    // grid-template-rows: 400px;
     @include breakpoint(sm) {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: minmax(420px, auto);
@@ -100,58 +99,6 @@ img {
 
 
 
-.icon {
-    position: relative;
-    display: inline-block;
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    // background-color: beige;
-    font-size: 1px;
-    text-indent: -99999px;
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 5px;
-        opacity: 0.4;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-        // filter: brightness(100);
-        transition: all 0.3s ease-in;
-    }
-
-    &:hover::after {
-        opacity: 1;
-    }
-    &--fb,
-    &--insta,
-    &--pin {
-        
-    }
-
-    &--fb {
-        &::after {
-            background-image: url('./../svg/fb.svg');
-        }
-    }
-
-    &--insta {
-        &::after {
-            background-image: url('./../svg/insta.svg');
-        }
-    }
-
-    &--pin {
-        &::after {
-            background-image: url('./../svg/pin.svg');
-        }
-    }
-}
 
 .no-scroll {
     height: 100%;
@@ -160,19 +107,15 @@ img {
 
 
 // LazyLoad
-
 .lazy {
-    // transform: scale(0.8) translate(50px, -50px);
     opacity: 0;
     transition: all 0.5s ease-in;
     &.loaded { 
-        // transform: scale(1) translate(0, 0);
         opacity: 1;
     }
 }
 
 // Header Text hide
-
 .hide-text {
     display: inline-block;
     opacity: 1;
@@ -181,4 +124,36 @@ img {
         width: 0%;
         opacity: 0;
     };
+}
+
+
+//Filter checkboxes
+
+input[type=checkbox].custom_checkbox {
+    position: absolute; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    height:1px; 
+    width:1px; 
+    margin:-1px; 
+    padding:0;
+    border:0;
+  
+    
+    &:checked + label {
+        background-position: 0 -15px;
+    }
+    
+    & + label {
+        background-image:url('../img/lite-x-gray.png');
+        padding-left:20px;
+        height:15px; 
+        display:inline-block;
+        line-height:15px;
+        background-repeat:no-repeat;
+        background-position: 0 0;
+        font-size:15px;
+        vertical-align:middle;
+        cursor:pointer;
+    }
 }

@@ -99,9 +99,20 @@
 
 
 	// Compare photos before & after retouch
+	const setCompareWrapperWidth = () => {
+		const imgWidth = $('.compare__img').width();
+		console.log('imgWidth ', imgWidth);
+		$('.compare').css('width', imgWidth);
+	}
 
 	if ($('.compare').length) {
-		$('.compare__container').twentytwenty();
+		setCompareWrapperWidth();
+		$('.compare__container').twentytwenty({
+			before_label: 'Przed', 
+			after_label: 'Po', 
+		});
+
+
 	}
 
 	// Open Modal
@@ -111,7 +122,11 @@
 		$('.modal--ajax').addClass('open');
 
 		if( $('.modal--ajax .compare__container').length ) {
-			$('.modal--ajax .compare__container').twentytwenty();
+			$('.modal--ajax .compare__container').twentytwenty({
+				before_label: 'Przed', 
+				after_label: 'Po', 
+			});
+			setCompareWrapperWidth();
 		}
 	}
 
@@ -130,6 +145,7 @@
 	$.ajaxSetup({cache: false});
 	const loadPostAjax = function(e) {
 		e.preventDefault();
+		console.log('AJAX');
 		const $this = $(this);
 		const modalContainer = $('#ajax-container');
 		const post_link = $this.attr('href');
@@ -141,7 +157,7 @@
 		return false;
 	}
 
-	$('.modal-link').on('click', loadPostAjax);
+	$(document).on('click', '.modal-link', loadPostAjax);
 
 
 

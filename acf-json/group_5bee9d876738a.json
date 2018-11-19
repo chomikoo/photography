@@ -51,7 +51,6 @@
         "slug",
         "author",
         "format",
-        "page_attributes",
         "featured_image",
         "categories",
         "tags",
@@ -59,5 +58,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542364602
+    "modified": 1542655521
 }

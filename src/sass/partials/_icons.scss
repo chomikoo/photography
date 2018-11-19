@@ -1,0 +1,52 @@
+.icon {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    // background-color: beige;
+    font-size: 1px;
+    text-indent: -99999px;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        opacity: 0.4;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        // filter: brightness(100);
+        transition: all 0.3s ease-in;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+    &--fb,
+    &--insta,
+    &--pin {
+        
+    }
+
+    &--fb {
+        &::after {
+            background-image: url('./../svg/fb.svg');
+        }
+    }
+
+    &--insta {
+        &::after {
+            background-image: url('./../svg/insta.svg');
+        }
+    }
+
+    &--pin {
+        &::after {
+            background-image: url('./../svg/pin.svg');
+        }
+    }
+}

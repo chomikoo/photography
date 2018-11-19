@@ -47,7 +47,7 @@
             'show_in_rest'              => true,
             'rest_base'                 => 'albums',
             'rest_controller_class'     => 'WP_REST_Posts_Controller',
-            'rewrite'                   => array('slug' => 'galeria'),
+            'rewrite'                   => array('slug' => 'albums'),
             'supports' => array(
                 'title','editor','author','thumbnail','excerpt','comments','custom-fields'
             ),

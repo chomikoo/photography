@@ -39,8 +39,8 @@
 
         overflow-y: scroll;
 
-        @include breakpoint(md) {
-            width: calc(100% - 20px);
-        }
+        // @include breakpoint(md) {
+        //     width: calc(100% - 20px);
+        // }
     }
 }
