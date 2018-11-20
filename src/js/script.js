@@ -19,16 +19,16 @@
 		$("#preloader").fadeOut();
 	});
 
-	$('.hamburger').on('click', () => {
+	$('.hamburger').on('click', function() {
+		console.log(this);
 		$(this).toggleClass('active');
 		$('#main-menu').toggleClass('open');
 		$('main').toggleClass('blur');
-		$('body').addClass('no-scroll');
 	});
 
 	//Slick.js carousel init
 	$('.carousel__list').slick({
-		autoplay: true,
+		// autoplay: true,
 		infinite: true,
 		speed: 300,
 		fade: true,
@@ -151,7 +151,7 @@
 		const modalContainer = $('#ajax-container');
 		const post_link = $this.attr('href');
 
-		console.log(post_link);
+		// console.log(post_link);
 
 		modalContainer.load(post_link + ' #main', openModal);
 		$('.main').addClass('blur');

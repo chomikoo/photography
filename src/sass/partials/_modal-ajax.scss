@@ -1,10 +1,6 @@
 .modal {
 
     &--ajax {
-        &.open {
-            position: fixed;
-            opacity: 1;
-        }
         top: 0;
         bottom: 0;
         left: 0;
@@ -15,12 +11,20 @@
         opacity: 0;
         transition: all 0.3s ease-in;
         overflow: hidden;
-
+        &.open {
+            position: fixed;
+            opacity: 1;
+            .btn--close {
+                opacity: 1;
+            }
+        }
+        
         .btn--close {
             position: absolute;
             top: 25px; 
             right: 25px;
             z-index: 2;
+            opacity: 0;
             width: 45px;
             height: 45px;
             border: 2px solid $white;
@@ -38,9 +42,5 @@
         background-color: $c-black08;
 
         overflow-y: scroll;
-
-        // @include breakpoint(md) {
-        //     width: calc(100% - 20px);
-        // }
     }
 }

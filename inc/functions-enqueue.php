@@ -11,7 +11,8 @@
 
 function chomikoo_load_scripts() {
 
-	$ver = time();
+	$ver = '1.0.1';
+	// $ver = time();
 
 	wp_enqueue_style( 'styles', THEME_URL . 'dist/css/style.min.css', array(), $ver, 'all' );
 	
@@ -19,7 +20,7 @@ function chomikoo_load_scripts() {
 	// wp_enqueue_script( 'fontawesome',  'https://use.fontawesome.com/releases/v5.5.0/js/all.js', array(), 'all' );
 	// Slider
 	// wp_enqueue_script( 'slider', THEME_URL . 'src/js/vendors/slick.js', array('jquery'), $ver, 'all'  );
-	
+
 	// Lazy loades
 	// wp_enqueue_script( 'lazy', THEME_URL . 'src/js/vendors/lazyload.iife.js', array('jquery'), $ver, 'all'  );
 	

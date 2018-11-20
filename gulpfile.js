@@ -150,7 +150,7 @@ gulp.task('scripts', () => {
 		jsAll
 		)
 		.pipe(concat('script.min.js'))
-		// .pipe( gulpif( options.has( 'production'), stripdebug()))
+		.pipe( gulpif( options.has( 'production'), stripdebug()))
 		.pipe(babili({
 			mangle: {
 				keepClassNames: true

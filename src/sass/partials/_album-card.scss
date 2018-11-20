@@ -1,6 +1,7 @@
 .album-card {
     $ac: &;
     position: relative;
+    overflow: hidden;
 
     &__link {
         display: block;
