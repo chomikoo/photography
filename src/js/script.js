@@ -1,5 +1,6 @@
 (function ($) {
 	'use strict'
+	console.log('Hello from script.js ');
 
 	const headerH = $('.header').outerHeight();
 
@@ -11,18 +12,18 @@
 		}
 	})
 
-	console.log('Hello from script.js ');
 
 	// Preloader 
 	$('html').addClass('js');
-	$(window).on('load', function () {
+	$(window).on('load', () => {
 		$("#preloader").fadeOut();
 	});
 
-	$('.hamburger').on('click', function () {
+	$('.hamburger').on('click', () => {
 		$(this).toggleClass('active');
 		$('#main-menu').toggleClass('open');
 		$('main').toggleClass('blur');
+		$('body').addClass('no-scroll');
 	});
 
 	//Slick.js carousel init
@@ -39,7 +40,7 @@
 
 	// Scroll Animations 
 
-	$(window).on('scroll', function() {
+	$(window).on('scroll', () => {
 		if($(window).scrollTop() > headerH ) {
 			$('.hide-text').addClass('active');
 		} else {
@@ -145,10 +146,12 @@
 	$.ajaxSetup({cache: false});
 	const loadPostAjax = function(e) {
 		e.preventDefault();
-		console.log('AJAX');
+		console.log('AJAX', e);
 		const $this = $(this);
 		const modalContainer = $('#ajax-container');
 		const post_link = $this.attr('href');
+
+		console.log(post_link);
 
 		modalContainer.load(post_link + ' #main', openModal);
 		$('.main').addClass('blur');

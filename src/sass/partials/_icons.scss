@@ -4,10 +4,9 @@
     width: 45px;
     height: 45px;
     cursor: pointer;
-    // background-color: beige;
     font-size: 1px;
     text-indent: -99999px;
-    &::after {
+    a::after {
         content: '';
         position: absolute;
         top: 0;
@@ -15,37 +14,39 @@
         width: 100%;
         height: 100%;
         padding: 5px;
-        opacity: 0.4;
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        // filter: brightness(100);
-        transition: all 0.3s ease-in;
+        cursor: pointer;
+        pointer-events: all;
     }
 
-    &:hover::after {
-        opacity: 1;
-    }
     &--fb,
     &--insta,
     &--pin {
-        
+        a::after {
+            opacity: 0.5;
+        }
+        &:hover a::after {
+            animation: pulse 1.5s linear infinite;
+        }
+
     }
 
     &--fb {
-        &::after {
+        a::after {
             background-image: url('./../svg/fb.svg');
         }
     }
 
     &--insta {
-        &::after {
+        a::after {
             background-image: url('./../svg/insta.svg');
         }
     }
 
     &--pin {
-        &::after {
+        a::after {
             background-image: url('./../svg/pin.svg');
         }
     }

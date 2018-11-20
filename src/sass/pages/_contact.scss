@@ -92,28 +92,20 @@
     &-submit {
         position: relative;
         border: none;
+        border-bottom: 2px solid $white ;
         background: transparent;
         color: $c-grey;
         text-transform: lowercase;
         font-size: 26px;
         letter-spacing: 2px;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px; 
-            background-color: $black;
-            transition: all 0.3s ease-in;
+        transition: all 0.2s ease-in-out;
+        &:hover, &:focus  {
+            border-bottom: 2px solid $black;
         }
+    }
 
-        &:hover {
-            &::after {
-                width: 100%;
-            }
-        }
+    &-response-output {
+        color: $black;
     }
 
 }

@@ -54,6 +54,16 @@ const jsSRC = './src/js/';
 const jsVendors = jsSRC + 'vendors/';
 const jsMain = jsSRC + 'script.js';
 
+const jsAll = [
+	jsVendors + 'slick.js',
+	jsVendors + 'lazyload.iife.js',
+	jsVendors + 'jquery.event.move.js',
+	jsVendors + 'jquery.twentytwenty.js',
+	jsVendors + 'instafeed.js',
+	// jsSRC + 'filter.js'
+	jsMain
+];
+
 const jsDIST = './dist/js/';
 
 //=========== Images ==================/
@@ -136,11 +146,11 @@ gulp.task('styles', () => {
 //================
 
 gulp.task('scripts', () => {
-	return gulp.src([
-			jsMain
-		])
+	return gulp.src(
+		jsAll
+		)
 		.pipe(concat('script.min.js'))
-		.pipe( gulpif( options.has( 'production'), stripdebug()))
+		// .pipe( gulpif( options.has( 'production'), stripdebug()))
 		.pipe(babili({
 			mangle: {
 				keepClassNames: true
