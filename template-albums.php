@@ -36,7 +36,28 @@ get_header(); ?>
 			</div>
 
 			<div id="filter-results" class="albums__main grid">
+
+			<?php	
+				$albums_args = array(
+					'post_type' => 'albums',
+					'posts_per_page' => 25,
+				);
+
+				$albums_loop = new WP_Query($albums_args);
+
+				if ( $albums_loop->have_posts() ) {
+					$i=0;
+					while ( $albums_loop->have_posts() ) {
+						$albums_loop->the_post();
+						echo '<div class="album-card--grey '. (($i%3) ? 'grid--v1' : 'grid--v2').'"></div>';
+						$i++;
+					}
 				
+					
+					wp_reset_postdata();
+				}
+			?>
+
 			</div>
 			
 			</section>

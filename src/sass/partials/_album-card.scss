@@ -52,6 +52,10 @@
         left: 25px;
         transition-delay: 0.2s;
     }
+    //for placeholder
+    &--grey {
+        background-color: $c-grey;
+    }
 
     &:hover {
         #{$ac}__title, #{$ac}__date  {

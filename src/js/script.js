@@ -112,14 +112,11 @@
 			before_label: 'Przed', 
 			after_label: 'Po', 
 		});
-
-
 	}
 
 	// Open Modal
 
 	const openModal = () => {
-		// console.log('Open');
 		$('.modal--ajax').addClass('open');
 
 		if( $('.modal--ajax .compare__container').length ) {
