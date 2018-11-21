@@ -13,6 +13,7 @@
     justify-content: space-between;
     padding: 25px 15px;
     margin: 0 auto 30px auto;
+
     background-color: $c-black08;
 }
 
@@ -21,50 +22,55 @@
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
+
     overflow: hidden;
 
     @include breakpoint(xl) {
         flex-direction: row;
+        max-height: 90vh;
     }
 
     &__about {
         position: relative;
+
         width: 100%;
-        flex: 0 0 100%;
-        // margin: 0 0 0 -5px;
         padding: 20px 50px 50px 50px;
+
         background-color: $white;
         color: $black;
+
         &:before {
             content: "";
-            width: calc(100% - 25px);
-            height: 30px;
             position: absolute;
             top: calc(0% - 29px);
             left: 0px;
+
+            width: calc(100% - 25px);
+            height: 30px;
+
             background: $white;
         }
         &:after {
             content: "";
-            width: 0;
-            height: 0;
             position: absolute;
             top: calc(0% - 29px);
             left: calc(100% - 25px);
+
+            width: 0;
+            height: 0;
             border: 15px solid $white;
             border-right: 15px solid transparent;
             border-top: 15px solid transparent;
           }
           
-          @include breakpoint(xl) {
-              width: 40%;
-              flex: 0 0 40%;
-              padding: 50px 50px 50px 50px;
-              &::after {
-                  top: 0;
-                  border-right: 15px solid $black;
-                  border-top: 15px solid $black;
-              }
+            @include breakpoint(xl) {
+                width: 40%;
+                padding: 50px 50px 50px 50px;
+                &::after {
+                    top: 0;
+                    border-right: 15px solid $black;
+                    border-top: 15px solid $black;
+            }
           }
         }
 
@@ -72,6 +78,7 @@
         margin: 0 0 20px 0;
         padding: 0 0 20px 0;
         border-bottom: 1px solid $black;
+
         font-size: 30px;
         letter-spacing: 5px;
         text-transform: lowercase;
@@ -84,7 +91,6 @@
 
 .carousel {
     width: 100%;
-    flex: 0 0 100%;
 
     &__img {
         width: 100%;
@@ -92,11 +98,14 @@
     &__btn {
         position: absolute;
         top: 50%;
-        transform: translate(0%, -50%);
         z-index: 2;
-        font-size: 40px;
+
+        transform: translate(0%, -50%);
+
         height: 100%;
         width: 50px;
+
+        font-size: 40px;
 
         &--prev {
             left: 0;
@@ -113,6 +122,5 @@
 
     @include breakpoint(xl) {
         width: 60%;
-        flex: 0 0 60%;
     }
 }

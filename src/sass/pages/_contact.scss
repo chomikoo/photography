@@ -91,13 +91,14 @@
 
     &-submit {
         position: relative;
+        
         border: none;
         border-bottom: 2px solid $white ;
         background: transparent;
-        color: $c-grey;
-        text-transform: lowercase;
         font-size: 26px;
         letter-spacing: 2px;
+        color: $c-grey;
+        text-transform: lowercase;
         transition: all 0.2s ease-in-out;
         &:hover, &:focus  {
             border-bottom: 2px solid $black;

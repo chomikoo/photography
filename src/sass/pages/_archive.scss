@@ -1,11 +1,3 @@
-// .filter-card {
-//     background-color: $white;
-//     color: $black;
-//     &__link {
-//         color: $c-grey;
-//     }   
-// }
-
 .albums {
     display: flex;
     flex-direction: column;
@@ -27,7 +19,7 @@
 
     &__main {
         @include breakpoint(xl) {
-            flex: 0 0 70%;
+            // flex: 0 0 70%;
             max-width: 70%;
         }
     }

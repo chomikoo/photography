@@ -107,11 +107,11 @@
 	}
 
 	if ($('.compare').length) {
-		setCompareWrapperWidth();
 		$('.compare__container').twentytwenty({
 			before_label: 'Przed', 
 			after_label: 'Po', 
 		});
+		setCompareWrapperWidth();
 	}
 
 	// Open Modal
@@ -120,11 +120,20 @@
 		$('.modal--ajax').addClass('open');
 
 		if( $('.modal--ajax .compare__container').length ) {
-			$('.modal--ajax .compare__container').twentytwenty({
-				before_label: 'Przed', 
-				after_label: 'Po', 
+			
+			const imgCount = $('.compare__container img').length;
+			let imgLoaded = 0;
+			$('.compare__container img').load(function() {
+				imgLoaded++;
+				if (imgLoaded == imgCount) {
+					$('.modal--ajax .compare__container').twentytwenty({
+						// default_offset_pct: 1,
+						before_label: 'Przed', 
+						after_label: 'Po', 
+					});
+					setCompareWrapperWidth();
+				}
 			});
-			setCompareWrapperWidth();
 		}
 	}
 
@@ -139,7 +148,6 @@
 	$('.modal--ajax .btn--close').on('click', closeModal);
 
 	// Ajax - Post loading into modal
-	
 	$.ajaxSetup({cache: false});
 	const loadPostAjax = function(e) {
 		e.preventDefault();
@@ -158,7 +166,5 @@
 	}
 
 	$(document).on('click', '.modal-link', loadPostAjax);
-
-
 
 })(jQuery)

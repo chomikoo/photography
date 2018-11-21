@@ -70,34 +70,6 @@ img {
     }
 }
 
-.grid {
-    display: grid;
-    grid-gap: $gap;
-    grid-auto-flow: row dense;
-    grid-template-columns: 1fr;
-    grid-auto-rows: minmax(400px, auto);
-
-    @include breakpoint(sm) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(420px, auto);
-        
-            &--v1 {
-                grid-column: span 1;
-            }
-        
-            &--v2 {
-                grid-column: span 2;
-            }
-    }
-
-    @include breakpoint(xl) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(450px, auto);
-    }
-
-}
-
-
 
 
 .no-scroll {
@@ -131,29 +103,31 @@ img {
 
 input[type=checkbox].custom_checkbox {
     position: absolute; 
-    overflow: hidden; 
+
     clip: rect(0 0 0 0); 
+
     height:1px; 
     width:1px; 
     margin:-1px; 
     padding:0;
     border:0;
-  
-    
+
+    overflow: hidden; 
+   
     &:checked + label {
         background-position: 0 -15px;
     }
     
     & + label {
-        background-image:url('../img/lite-x-gray.png');
+        display:inline-block;
         padding-left:20px;
         height:15px; 
-        display:inline-block;
         line-height:15px;
-        background-repeat:no-repeat;
-        background-position: 0 0;
         font-size:15px;
         vertical-align:middle;
+        background-image:url('../img/lite-x-gray.png');
+        background-repeat:no-repeat;
+        background-position: 0 0;
         cursor:pointer;
     }
 }

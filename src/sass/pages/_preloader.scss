@@ -5,6 +5,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
+
     display: none;
     background-color: $black;
 }
@@ -34,10 +35,11 @@
     }
     
     &__dot {
-        background-color: $white;
         width: 15px;
         height: 15px;
         border-radius: 50%;
+        background-color: $white;
+        
         animation: loader 2s ease infinite;
 
         &:nth-of-type(1) {
