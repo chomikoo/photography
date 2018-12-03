@@ -1,5 +1,6 @@
+![Example screenshot](./screenshot.png) 
 # Project Name
-> Portfolio Theme
+> Portfolio Theme - nataliazieba.eu
 
 ## Table of contents
 * [General info](#general-info)
@@ -15,7 +16,6 @@
 Photgraphy portfolio
 
 <!-- ## Screenshots
-![Example screenshot](./img/screenshot.png) -->
 
 ## Technologies
 * HTML5
