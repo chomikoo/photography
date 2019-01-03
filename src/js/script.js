@@ -28,10 +28,7 @@
 
 	//Slick.js carousel init
 	$('.carousel__list').slick({
-		adaptiveHeight: false,
-		// autoplay: true,
-		variableWidth: true,
-		centerMode: true,
+		autoplay: true,
 		infinite: true,
 		speed: 300,
 		fade: true,
