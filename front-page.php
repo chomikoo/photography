@@ -23,9 +23,9 @@ get_header(); ?>
 					foreach( $slider as $image) {
 						// echo ;
 					?>
-						<li>
+						<li class="thumbnail carousel__img">
 						
-							<img class="carousel__img" <?php awesome_acf_responsive_image( $image[ID], 'thumb-640', '640px' ); ?> alt="<?php echo $image['alt']; ?>" />
+							<img <?php awesome_acf_responsive_image( $image[ID], 'thumb-640', '640px' ); ?> alt="<?php echo $image['alt']; ?>" />
 
 						</li>
 					<?php
