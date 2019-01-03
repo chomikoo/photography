@@ -64,7 +64,7 @@ jQuery(document).ready(function($){
 			// 	$('#filter-results').html('Ładujemy ...');
 			// },
 			success: function(data) {
-				console.log("SUCCESS");
+				// console.log("SUCCESS");
 				$('#filter-results').html(data);
 				new LazyLoad({
 					elements_selector: ".lazy",
