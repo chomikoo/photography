@@ -14,9 +14,9 @@
 
 
 	// Preloader 
-	$('html').addClass('js');
+	$('#preloader').addClass('show-preloader');
 	$(window).on('load', () => {
-		$("#preloader").fadeOut();
+		$("#preloader").removeClass('show-preloader');
 	});
 
 	$('.hamburger').on('click', function() {
