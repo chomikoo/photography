@@ -151,7 +151,7 @@
 	$.ajaxSetup({cache: false});
 	const loadPostAjax = function(e) {
 		e.preventDefault();
-		console.log('AJAX', e);
+		// console.log('AJAX', e);
 		const $this = $(this);
 		const modalContainer = $('#ajax-container');
 		const post_link = $this.attr('href');
