@@ -11,7 +11,7 @@
 
 function chomikoo_load_scripts() {
 
-	$ver = '0301c';
+	$ver = '0301d';
 	// $ver = time();
 
 	wp_enqueue_style( 'styles', THEME_URL . 'dist/css/style.min.css', array(), $ver, 'all' );

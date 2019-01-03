@@ -20,7 +20,7 @@
 	});
 
 	$('.hamburger').on('click', function() {
-		console.log(this);
+		// console.log(this);
 		$(this).toggleClass('active');
 		$('#main-menu').toggleClass('open');
 		$('main').toggleClass('blur');
@@ -28,7 +28,10 @@
 
 	//Slick.js carousel init
 	$('.carousel__list').slick({
+		adaptiveHeight: false,
 		// autoplay: true,
+		variableWidth: true,
+		centerMode: true,
 		infinite: true,
 		speed: 300,
 		fade: true,
